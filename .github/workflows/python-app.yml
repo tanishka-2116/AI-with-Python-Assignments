@@ -1,0 +1,38 @@
+name: Python Application Check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install pandas
+
+    - name: Run Python files
+      run: |
+        echo "Running Assignment 1"
+        python Assignment-1-Dictionary/dictionary_squares.py
+
+        echo "Running Assignment 2"
+        python Assignment-2-Word-Count/word_count.py
+
+        echo "Running Assignment 3"
+        python Assignment-3-Phonebook/phonebook.py
+
+        echo "Running Assignment 4"
+        python Assignment-4-Pandas/pandas_basics.py
