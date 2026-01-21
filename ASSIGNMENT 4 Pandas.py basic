@@ -1,0 +1,23 @@
+# Assignment 4: Pandas exercise
+
+import pandas as pd
+
+data = {
+    "Name": ["Amit", "Neha", "Rahul"],
+    "Age": [22, 21, 23],
+    "City": ["Pune", "Mumbai", "Delhi"]
+}
+
+df = pd.DataFrame(data)
+
+print("DataFrame:")
+print(df)
+
+print("\nDataFrame Info:")
+print(df.info())
+
+print("\nStatistical Summary:")
+print(df.describe())
+
+print("\nNames Column:")
+print(df["Name"])
